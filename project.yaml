@@ -1,3 +1,15 @@
 AWSTemplateFormatVersion: 2010-09-09
 
 Description: Provisioning of 2 EC2 Instances within a Custom Network via Cloudformation
+
+Resources:
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties: 
+      CidrBlock: 10.7.0.0/16
+      EnableDnsHostnames: True
+      EnableDnsSupport: True
+      InstanceTenancy: default
+      Tags: 
+        - Key: Name
+          Value: CBAProjectVPC
